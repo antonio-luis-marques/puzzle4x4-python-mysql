@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Estatisticas{% endblock %}
+
+{% block content %}
+
+
+    <div class="d-flex container-fluid w-100 h-100 mt-3 mb-3 justify-content-center align-items-center flex-column">
+        {% if error %}
+            <p class="text-white">{{ error }}</p>
+        {% else %}
+            <p class="text-white">Estatisticas do Jogo</p>
+            <div class="row row-cols-md-3 g-4">
+                <div class="col">
+                    <img class="w-100" src="data:image/png;base64,{{ img_data }}" alt="Gráfico de estatísticas">
+                </div>
+                <div class="col-md-4">
+                    <img class="w-100" src="data:image/png;base64,{{ img_data_tempo }}" alt="Gráfico de estatísticas">
+                </div>
+                <div class="col-md-4">
+                    <img class="w-100" src="data:image/png;base64,{{ img_data_tempo_recorde }}" alt="Gráfico de estatísticas">
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

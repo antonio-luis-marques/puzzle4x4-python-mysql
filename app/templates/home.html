@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Puzzle{% endblock %}
+
+{% block content %}
+<div class="fixed-top w-100 h-100 d-none fim align-items-center justify-content-center">
+    <div class="alert alert-danger bg-white p-4 d-none perder align-items-center justify-content-center flex-column">
+        <h6>voce perdeu</h6>
+        <button class="btn btn-primary mt-4">ok</button>
+    </div>
+    <div class="alert alert-success bg-white p-4 d-none ganhar align-items-center justify-content-center flex-column">
+        <h4>Parabens</h4>
+        <h6 class="recarga">
+            Recarga:
+            <span id="codigo"></span>
+        </h6>
+        <button class="btn btn-primary mt-4">ok</button>
+    </div>
+</div>
+<div class="cont rounded bg-secondary border">
+    <div class="w-100">
+            <h4 class="text-warning text-center m-1 rounded p-1">Puzzle</h4>
+    </div>
+    <div class="col w-100">
+        <div class="text-white w-100 operadora">
+            <label class="w-100 ">
+                <span>Operadora</span>
+                <select class="form-select select-operadora">
+                    {%for operadora in operadoras[:1] %}
+                        <option value="{{ operadora }}">{{ operadora }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <label class="w-100">
+                <span>Recarga</span>
+                <select class="form-select select-valor">
+                    {%for valor_r in valor %}
+                        <option value="{{ valor_r }}">{{ valor_r }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+        </div>
+        <div class="d-flex w-100 menu pt-2 pb-2 text-white">
+            <button class="btn btn-primary rounded">
+                Iniciar
+            </button>
+            <span class="move">
+                move: 0
+            </span>
+            <span class="time">
+              time: 150
+            </span>
+        </div>
+        <div class="puzzle" style="position: relative;">
+            {% for botao in numeros %}
+              {% if botao.valor %}
+
+                  <button class="" data-linha="{{ botao.linha }}" data-coluna="{{ botao.coluna }}">
+                    {{ botao.valor }}
+                  </button>
+
+              {% else %}
+
+                  <button class="" data-linha="{{ botao.linha }}" data-coluna="{{ botao.coluna }}"></button>
+
+              {% endif %}
+              {% if loop.index % 4 == 0 %}
+                </tr><tr>
+              {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<a class="fixed-top p-2" href="/estatisticas">
+    <button class="btn btn-primary"><i class="fa-solid fa-chart-line"></i></button>
+</a>
+<div class="modal fade" id="popup" tabindex="-1" aria-labelledby="popupLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="popupLabel">Anúncio</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Conteúdo do anúncio aqui</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
