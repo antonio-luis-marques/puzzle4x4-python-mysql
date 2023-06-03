@@ -177,7 +177,7 @@ def obter_valores_recarga():
 
 @app.route('/tempo_movimentos', methods=['GET'])
 def obter_tempo_e_movimentos():
-    tempo = 150
+    tempo = 250
     movimentos = 0
     return jsonify({'tempo': tempo, 'movimentos': movimentos})
 
