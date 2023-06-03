@@ -185,7 +185,7 @@ def obter_tempo_e_movimentos():
 def gerar_numeros(nivel):
     if nivel == "facil":
         numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0]
-        # random.shuffle(numeros)
+        random.shuffle(numeros)
         matriz = []
         for i in range(4):
             for j in range(4):
