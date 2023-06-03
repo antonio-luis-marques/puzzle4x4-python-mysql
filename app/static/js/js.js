@@ -166,7 +166,7 @@
     function jogada(estado) {
       const operadora = document.querySelector('.select-operadora').value;
       const valor = document.querySelector('.select-valor').value;
-      const tempo_jogo = 150-tempoRestante; // subtrair o tempo de espera antes do jogo iniciar
+      const tempo_jogo = 250-tempoRestante; // subtrair o tempo de espera antes do jogo iniciar
       const movimentos = contadorMovimentos;
       const dados = {
         movimentos: movimentos,
