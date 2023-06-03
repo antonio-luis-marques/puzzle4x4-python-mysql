@@ -1,9 +1,9 @@
-# Puzzle de numeros (1-15)
+# Puzzle 4X4
 
 **AVISO: Este projecto é apenas para fins de estudo e avaliacção de empregadores. Se você deseja utilizar este código 
 em seus próprios projectos, por favor mencione o autor original.**
 
-Este é o Readme do Jogo dos 15, um jogo web desenvolvido com JavaScript, HTML, CSS Bootstrap, Flask e MySQL. 
+Este é o Readme do Jogo Puzzle 4X4, um jogo web desenvolvido com JavaScript, HTML, CSS Bootstrap, Flask e MySQL. 
 O jogo consiste em organizar os números de 1 a 15 em uma matriz quadrada de forma crescente, movendo os números 
 em células adjacentes vazias.
 
