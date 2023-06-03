@@ -54,13 +54,13 @@ O jogo utiliza o MySQL como banco de dados. Antes de executar o jogo, é necess�
 
 ## Imagens
 Aqui estão algumas capturas de tela do puzzle em acção:
-![Tela 1](capture/capture1.JPG)
+![Tela 1](capture/Capture1.JPG)
 *Tela Inicial*
 
-![Tela 2](capture/capture2.JPG)
+![Tela 2](capture/Capture2.JPG)
 *Apresentação da tela quando o jogador perde*
 
-![Tela 3](capture/capture3.JPG)
+![Tela 3](capture/Capture3.JPG)
 *Apresentação da tela quando o jogador Vence*
 
 ![Tela 4](capture/capture4.JPG)
