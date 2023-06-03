@@ -1,6 +1,6 @@
     // Obter todos os botões do jogo
 //    var dados = {{ obter_tempo_e_movimentos() | tojson }};
-    const botoes = document.querySelectorAll('.puzzle button');
+    const botoes = document.querySelectorAll('.puzzle button span');
     var estadoDoJogo = "parado"; // Inicialmente, o jogo está parado
 //    let tempoRestante = dados.tempo;
 //    let contadorMovimentos = dados.movimentos; // contador de movimentos
@@ -89,7 +89,6 @@
 //                        document.querySelector('#codigo').textContent = data;
 //                    });
 
-//recrutamento@jstechnology.co.mz
               }
             }
         });
@@ -99,7 +98,7 @@
        if(estadoDoJogo === 'parado'){
         jogoIniciado = true;
         estadoDoJogo = 'jogando';
-        botaoIniciar.innerHTML = 'Recomeçar';
+        botaoIniciar.innerHTML = 'Restart';
         // Obter o elemento span do tempo
         const tempoSpan = document.querySelector('.menu .time');
 

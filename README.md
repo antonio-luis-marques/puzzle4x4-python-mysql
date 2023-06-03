@@ -1,39 +1,67 @@
-Puzzle App
-Esta é uma aplicação web que permite ao jogador jogar um jogo de puzzle e ganhar créditos para recarregar seu celular. 
-O jogo foi criado utilizando o framework Flask, banco de dados MySQL que armazena todas as 
-informações relevantes do jogo. A lógica do jogo foi desenvolvida em Python.
+# Puzzle de numeros (1-15)
 
-Funcionamento
-O jogador deve escolher uma operadora de telefonia e o valor da recarga que deseja ganhar. Caso vença o jogo, 
-ele receberá um código para recarregar seu celular com o valor escolhido e a operadora correspondente. 
-Todas as informações do jogo são armazenadas no banco de dados, incluindo o tempo de conclusão do jogo, 
-se o jogador ganhou ou perdeu, e o número de movimentos realizados.
+**AVISO: Este projecto é apenas para fins de estudo e avaliacção de empregadores. Se você deseja utilizar este código 
+em seus próprios projectos, por favor mencione o autor original.**
 
-Tecnologias Utilizadas
-A aplicação utiliza HTML para a estruturação da página, CSS e bootstrap para a estilização e javascript para manipulação 
-de eventos, além do Python para a lógica do jogo. A conexão com o banco de dados é feita utilizando o Flask. Além disso, 
-a aplicação gera gráficos estatísticos a partir dos dados armazenados no banco de dados utilizando tecnologias Python.
+Este é o Readme do Jogo dos 15, um jogo web desenvolvido com JavaScript, HTML, CSS Bootstrap, Flask e MySQL. 
+O jogo consiste em organizar os números de 1 a 15 em uma matriz quadrada de forma crescente, movendo os números 
+em células adjacentes vazias.
 
-Como Rodar
-Para rodar a aplicação, é necessário instalar o Flask e o banco de dados MySQL. É possível fazer isso através dos 
-seguintes comandos no terminal:
-pip install flask 'enter'
-sudo apt-get install mysql-server 'enter'
+# Tecnologias Utilizadas
+JavaScript
+HTML
+CSS Bootstrap
+Flask (Python)
+MySQL
 
-o 'enter' indica que apos escrever o comando deve clicar a tecla 'enter'
+## Funcionalidades
+- Organização dos números de 1 a 15 em ordem crescente.
+- Escolha de uma operadora de telefonia móvel.
+- Escolha de um valor de recarga.
+- Registro de estatísticas dos jogadores, incluindo tempo de conclusão, número de movimentos e resultado.
+- Recompensa ao jogador com uma recarga no valor escolhido após vencer o jogo.
+- Visualização de estatísticas, incluindo vitórias, derrotas, número médio de movimentos e tempo médio de conclusão.
 
-Após a instalação, é necessário ter o banco de dados. O banco de daddos está disponivel no Amazon Cloud.
-Baixe a base de dados, e atraves do xampp, importe e connecte-o
+## Para executar o jogo em sua máquina local, é necessário ter instalado:
+- Python (versão 3.6 ou superior)
+- Flask
+- MySQL
+- Bibliotecas Python necessárias: descritas no ficheiro requirements.txt na raiz
 
-Por fim, é necessário rodar o servidor Flask utilizando o seguinte comando:
-venv\Scripts\activate.bat 'enter'
-cd app 'enter'
-set flask_app=views.py 'enter'
-flask run 'enter'
+## Configuração do Banco de Dados
+O jogo utiliza o MySQL como banco de dados. Antes de executar o jogo, é necessário configurar o acesso ao banco de dados. Siga as instruções abaixo:
+- Crie um banco de dados MySQL.
+- Abra o arquivo views.py e localize a seguinte linha de código:
+      app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://be8f3a65652976:0f351cfe@us-cdbr-east-06.cleardb.net/heroku_2f8f7a4ca871bb8'
 
-o 'enter' indica que apos escrever o comando deve clicar a tecla 'enter'
-o ultimo comando 'flask run' vai forncer o endereco pelo qual sera possivel rodar a aplicao em algum navegador
+- Altere a string de conexão com o banco de dados de acordo com as configurações do seu ambiente.
 
+## Executando o Jogo
+- Clone este repositório para o seu ambiente local.
+- Navegue até a pasta do projecto.
+- Active o ambiente virtual executando o seguinte comando
+      venv\Scripts\activate
+- Instale as dependências necessárias executando o seguinte comando:
+      pip install -r requirements.txt
+- Navegue até a pasta com ficheiro python principal (views.py) executando o seguinte comando:
+      cd app
+- Inicie o servidor executando o seguinte comando
+      set flask_app=views.py
+- Execute o comando 'flask db migrate' para criar as migrações
+- Aplique as migrações usando o comando 'flask db upgrade'
+- Execute o aplicativo com o seguinte comando
+      flask run
 
-Autores
-Antonio Marques
+## Imagens
+Aqui estão algumas capturas de tela do puzzle em acção:
+![Tela 1](capture/capture1.JPG)
+*Tela Inicial*
+
+![Tela 2](capture/capture2.JPG)
+*Apresentação da tela quando o jogador perde*
+
+![Tela 3](capture/capture3.JPG)
+*Apresentação da tela quando o jogador Vence*
+
+![Tela 4](capture/capture4.JPG)
+*Tela que apresenta estatisticas do jogo*
